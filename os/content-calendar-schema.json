@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Content Calendar Item",
+  "type": "object",
+  "required": ["id", "title", "channel", "status", "owner", "publish_date"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "theme": { "type": "string" },
+    "channel": { "type": "string", "enum": ["blog", "newsletter", "linkedin", "x", "youtube", "podcast", "other"] },
+    "objective": { "type": "string" },
+    "target_audience": { "type": "string" },
+    "cta": { "type": "string" },
+    "status": { "type": "string", "enum": ["planned", "drafting", "review", "scheduled", "published"] },
+    "owner": { "type": "string" },
+    "assets": { "type": "array", "items": { "type": "string" } },
+    "publish_date": { "type": "string", "format": "date" }
+  }
+}

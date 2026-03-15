@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task",
+  "type": "object",
+  "required": ["id", "title", "owner", "status", "priority", "created_at"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "owner": { "type": "string" },
+    "contributors": { "type": "array", "items": { "type": "string" } },
+    "status": { "type": "string", "enum": ["todo", "in_progress", "blocked", "review", "done"] },
+    "priority": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+    "approval_required": { "type": "boolean", "default": true },
+    "dependencies": { "type": "array", "items": { "type": "string" } },
+    "due_date": { "type": "string", "format": "date" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "acceptance_criteria": { "type": "array", "items": { "type": "string" } }
+  }
+}
