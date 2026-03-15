@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CRM Record",
+  "type": "object",
+  "required": ["id", "type", "name", "stage", "owner", "updated_at"],
+  "properties": {
+    "id": { "type": "string" },
+    "type": { "type": "string", "enum": ["lead", "opportunity", "customer", "partner"] },
+    "name": { "type": "string" },
+    "company": { "type": "string" },
+    "email": { "type": "string" },
+    "stage": { "type": "string" },
+    "source": { "type": "string" },
+    "pain_points": { "type": "array", "items": { "type": "string" } },
+    "next_step": { "type": "string" },
+    "next_step_due": { "type": "string", "format": "date" },
+    "owner": { "type": "string" },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "updated_at": { "type": "string", "format": "date-time" }
+  }
+}
